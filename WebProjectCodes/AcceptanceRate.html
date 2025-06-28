@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@1,700&family=Josefin+Sans:ital,wght@0,700;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@1,700&family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<title> Acceptance rate </title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+</style>
+</head>
+<body>
+<header>
+  <nav>
+   <div class="logo">
+   <a  src="#">Learn</a>
+    </div>
+   <ul>
+      <li><a  href="index.html">Home</a></li> 
+      <li><a href="Specialties.html">Specialties</a></li>
+      <li><a href= "AcceptanceRate.html"> Acceptance rate </a></li>
+      <li><a href="RegisterWithUs.html">Register with us</a></li> 
+              
+   </ul> 
+ </nav>
+</header>
+<main>
+
+<p class="percentages">All allocation percentages are on the Umm Al-Qura University website 44 <strong> can be updated</strong> </p>
+
+<div class="Acceptance rate">
+
+  <figure>
+  <img src="img/female.jpg" alt=" This image shows the acceptance rate of female students at Umm Al-Qura University" width="400" height="250">
+  <a href="female.html">
+  <figcaption>
+  <button class="m-button" type="button">Female students</button>
+  </a>
+  </figcaption>
+  </figure>
+
+  <figure>
+  <img src=" img/mela.jpg" alt="This image shows the acceptance rate of mela students at Umm Al-Qura University"width="400" height="250">
+  <a href="mela.html">
+  <figcaption>
+  <button class="m-button" type="button">male students</button>
+  </a>
+  </figcaption>
+  </figure>
+  
+</div>
+
+<canvas id="fireworksCanvas"></canvas>
+
+<script>
+    window.onload = function() {
+        var canvas = document.getElementById('fireworksCanvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        var ctx = canvas.getContext('2d');
+
+        var fireworks = [];
+        var startTime = Date.now();
+        var duration = 5000; // 5 seconds
+
+        function Firework(x, y) {
+            this.x = x; // Initial position
+            this.y = y; // Initial position
+            this.vx = Math.random() * 5 - 2.5; // Random horizontal velocity
+            this.vy = Math.random() * -15 - 10; // Random vertical velocity
+            this.opacity = 1;
+            this.color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0'); // Random color
+
+            this.update = function() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.vy += 0.3; // Gravity effect
+                this.opacity -= 0.05; // Fade out over time
+            }
+
+            this.draw = function() {
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = this.color;
+                // Draw the letter "A+"
+                ctx.font = '30px Arial';
+                ctx.fillText('A+', this.x, this.y);
+            }
+        }
+
+        function createFirework() {
+            var x = Math.random() * canvas.width; // Random position horizontally
+            var y = canvas.height; // Bottom of the canvas
+            var firework = new Firework(x, y);
+            fireworks.push(firework);
+        }
+
+        function updateFireworks() {
+            for (var i = fireworks.length - 1; i >= 0; i--) {
+                fireworks[i].update();
+                if (fireworks[i].opacity <= 0) {
+                    fireworks.splice(i, 1);
+                }
+            }
+        }
+
+        function drawFireworks() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (var i = 0; i < fireworks.length; i++) {
+                fireworks[i].draw();
+            }
+        }
+
+        function loop() {
+            if (Date.now() - startTime < duration) {
+                createFirework();
+                updateFireworks();
+                drawFireworks();
+                requestAnimationFrame(loop);
+            } else {
+                // Clear the canvas after 5 seconds
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        loop();
+    };
+</script>
+</main>
+</body>
+</html>

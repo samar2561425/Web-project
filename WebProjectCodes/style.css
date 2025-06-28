@@ -1,0 +1,478 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo a {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 39px;
+  color: #061a30;
+  font-weight: bold;
+  margin-left: 100px;
+}
+
+a {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  text-decoration: none;
+  color: #061a30;
+  font-size: 25px;
+}
+
+ul {
+  margin: 0px;
+  margin-right: 100px;
+}
+
+ul li {
+  float: left;
+  padding: 0px 15px;
+  list-style: none;
+}
+
+ul li a:hover {
+  color: #6897bf;
+}
+
+.context {
+  margin: 180px;
+  text-align: center;
+}
+
+.context h1, .About h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 60px;
+  color: #061a30;
+}
+
+.context p, .About p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 25px;
+  color: #061a30;
+}
+
+button {
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #e9eff2;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #6897bf;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+button:hover {
+  color: #e8e8e8;
+}
+
+button:hover::before {
+  width: 100%;
+}
+
+button:hover {
+  background-color: #6897bf;
+}
+ 
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.About {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url('img/background_about.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+.content {
+  flex: 1;
+  text-align: left;
+  animation: slideInFromLeft 2s ease forwards;
+}
+
+.image-container {
+  flex: 1;
+  text-align: right;
+  animation: slideInFromRight 2s ease forwards;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  background-color: #061A30; /* Background color */
+  padding: 10px 0; /* Padding for the header */
+}
+
+.logo a,
+nav ul li a {
+  color: white; /* Text color */
+}
+
+
+footer {
+  background-color: #061a30;
+  color: #e2e1e1;
+  text-align: center;
+  padding: 1px 0; /* Add padding to the top and bottom of the footer */
+}
+
+footer small {
+  font-size: 1em;
+  width: 200px;
+}
+
+footer small span {
+  color: #6897bf;
+}
+
+
+.Specialties{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 60PX;
+ 
+}
+.Specialties img{
+border-radius: 13px;
+box-shadow: 4px;
+}
+
+.my-button{
+  border-radius: 10px;
+	width:250px ;
+  height: 40px;
+  background-color: #061A30;
+  color: #fff;
+	padding: 5px 5px;
+	margin: 20px 20px;
+}
+.my-button:hover {
+  border-radius: 10px;
+  width:250px ;
+  height: 40px;
+  background-color: #6897BF;
+	padding: 5px 5px;
+  margin: 20px 20px;
+}
+.Sign-Up{
+  width: 360px;
+  height: 460px;
+  margin: auto;
+  background-color: #fff;
+  color: #6897BF;
+  border-radius:3px;
+}
+
+h1{
+  text-align: center;
+  padding-top: 15px;
+}
+form{
+  width: 300px;
+  margin-left: 20px;
+}
+
+form input{
+  width: 100%;
+  padding: 7px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  margin: 18px 0px;
+}
+#submit{
+  width: 320px;
+  height: 35px;
+  margin-top: 20px;
+  background-color: #6897BF;
+  color: #fff;
+  font-size: 18px;
+}
+
+
+
+
+.Acceptance.rate {
+  display:flex;
+	align-items:center;
+	flex-wrap:wrap;	
+  margin-left: 10em;
+
+}
+.Acceptancerate .img{
+  width:500px;
+	height:300px;
+	 border: 10px solid black ;
+	border-radius:50px;
+	BOX-shadow: 20px   ;
+}
+
+.m-button{
+  border-radius: 10px;
+	width:350px ;
+  height: 40px;
+  background-color: #061A30;
+  color: #fff;
+	padding: 5px 5px;
+	margin: 20px 20px;
+}
+.m-button:hover {
+  border-radius: 10px;
+  width:350px ;
+  height: 40px;
+  background-color: #6897BF;
+	padding: 5px 5px;
+  margin: 20px 20px;
+}
+.TB{
+  padding-top: 7em;
+}
+table,th,td{
+  border:1px solid;
+  padding:6px;
+  text-align:center;
+  height:80px;
+  width:600px;
+  color:#061A30;
+  border:3px outside;
+  margin: 0 auto;
+  }
+  th{
+  background-color:#6897BF;
+  font-size:20px;
+  }
+  td{
+  font-size:25px;
+  }
+  caption{
+  font-size:40px;
+  }
+  .Overview{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 8em;
+    
+  }
+  .Overview dl{ 
+    padding: 10px 10px;
+  }
+  .Overview dt{
+    border-radius:40px;
+    margin-left:2em ;
+    padding: 8px;
+    font-size: 25px;
+    text-align: center;
+    background-color: #061A30;
+    color: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  }
+  .Overview dd{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    padding-top: 1em;
+   
+  }
+  .Overview iframe{
+    float: right;
+  margin-top: 3.5em;
+  
+  }
+  .language{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 8em;
+    
+  }
+  .language dl{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    padding:10px;
+  }
+  .language dt{
+    border-radius:40px;
+    margin-left:2em ;
+    padding: 8px;
+    font-size: 25px;
+    text-align: center;
+    background-color: #061A30;
+    color: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+   
+  }
+  .language dd{
+    font-size: 20px;
+    padding-top: 8em;
+   display: inline;
+  }
+  p{
+    font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Rubik', sans-serif;
+    text-align:center;
+    font-size: 25px;
+  }
+
+  .container form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  
+  .container label {
+font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Rubik', sans-serif;
+display: flex;
+cursor: pointer;
+font-weight: 500;
+position: relative;
+overflow: hidden;
+margin-bottom: 0.375em;
+  }
+  
+  .container  label input {
+    position: absolute;
+    left: -9999px;
+  }
+  
+  .container label input:checked + span {
+    background-color: #6897BF;
+    color: white;
+  }
+  
+  .container label input:checked + span:before {
+    box-shadow: inset 0 0 0 0.4375em #061A30;
+  }
+  
+  .container label span {
+    display: flex;
+    align-items: center;
+    padding: 0.375em 0.75em 0.375em 0.375em;
+    border-radius: 99em;
+    transition: 0.25s ease;
+    color: #061A30;
+  }
+  
+  .container label span:hover {
+    background-color: #d6d6e5;
+  }
+  
+  .container label span:before {
+    display: flex;
+    flex-shrink: 0;
+    content: "";
+    background-color: #fff;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    margin-right: 0.375em;
+    transition: 0.25s ease;
+    box-shadow: inset 0 0 0 0.125em #00005c;
+  }
+
+  .content h1{
+    font-size: 30px;
+    text-align: left;
+  }
+  .content p{
+  font-size:16px;
+  text-align: left;
+  font-family: Arial;
+  
+  }
+  
+  .line h1{
+  font-size: 30px;
+  }
+  
+  ol {
+  margin-right: 60em;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    font-size: 20px;
+  }
+  
+ .video-container  {
+  margin-right:10px ;
+  float: right;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(00, 0, 0, 0.3);
+}
